@@ -14,8 +14,10 @@ const app = express(); // to accept json data
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('API is running... again');
+    res.send("API is running...");
 });
+
+app.use('/api/user', userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
